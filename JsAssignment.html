@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Practice</title>
+</head>
+<body>
+ <p id="help">Helpful notes will appear here</p>
+<p>Email: <input type="text" id="email" name="email" /></p>
+<p>Name: <input type="text" id="name" name="name" /></p>
+<p>Age: <input type="text" id="age" name="age" /></p>
+<script>
+    function showHelp(help) {
+document.getElementById("help").textContent = help;
+}
+function setupHelp() {
+let helpText = [
+{ id: "email", help: "Your email address" },
+{ id: "name", help: "Your full name" },
+{ id: "age", help: "Your age (you must be over 16)" },
+];
+for (let i = 0; i < helpText.length; i++) {
+let item = helpText[i];
+document.getElementById(item.id).onfocus = function () {
+showHelp(item.help);
+};
+}
+}
+console.log(setupHelp());
+</script>
+</body>
+</html>
